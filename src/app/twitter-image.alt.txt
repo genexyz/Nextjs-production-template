@@ -1,0 +1,4 @@
+Next.js template to ship fast.
+(Next.js App Router, React, Typescript, Tailwind CSS, Radix UI, Shadcn UI)
+(Prisma, PosgreSQL, Supabase, NextAuth)
+(ESLint, Prettier, React Hook Form, Zod)
