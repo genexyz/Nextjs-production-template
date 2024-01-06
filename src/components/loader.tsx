@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 import {siteConfig} from "../../config/site";
-import lightModeLogo from "../../public/vercel.svg";
-import darkModeLogo from "../../public/vercel.svg";
+import lightModeLogo from "../../public/logo.webp";
+import darkModeLogo from "../../public/logo.webp";
 
 const Loader = () => (
   <div className="grid h-screen place-items-center bg-cover">

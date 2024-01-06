@@ -1,16 +1,11 @@
 "use client";
 
 import React, {useEffect, useState} from "react";
-import Link from "next/link";
 import {Mail, Menu, XCircle} from "lucide-react";
 
-import {Button} from "./ui/button";
-
 const menuItems = [
-  {text: "Home", url: "#"},
-  {text: "Pricing", url: "#"},
-  {text: "About", url: "#"},
-  {text: "Contact", url: "#"},
+  {text: "Products", url: "#"},
+  {text: "Profile", url: "#"},
 ];
 
 const iconComponents = [{Icon: Mail, url: "#"}];
@@ -74,7 +69,7 @@ const MobileMenu = ({onClose}: {onClose: () => void}) => {
   );
 };
 
-const Navbar = () => {
+const AppNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -87,10 +82,8 @@ const Navbar = () => {
     <div className="top-0 z-50 w-full bg-transparent py-2.5 lg:relative lg:py-5">
       <nav className="sticky inset-x-0 top-0 z-10 mx-auto max-w-4xl px-5 py-2.5 lg:border-none lg:py-4 xl:max-w-5xl">
         <div className="flex items-center justify-between">
-          <Link href="/">
-            <h2 className="text-2xl font-bold">Company LOGO</h2>
-          </Link>
-          <ul className="hidden space-x-10 text-base font-bold lg:flex">
+          <h2 className="text-2xl font-bold text-black">Company LOGO</h2>
+          <ul className="hidden space-x-10 text-base font-bold text-black/60 lg:flex">
             {menuItems.map(({text, url}, index) => (
               <li
                 key={index}
@@ -101,14 +94,12 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="hidden items-center gap-x-2 lg:flex">
-            <Link href="/login">
-              <Button variant={"ghost"} className="px-6 font-semibold">
-                Sign up
-              </Button>
-            </Link>
-            <Link href="/login">
-              <Button className="px-6 font-semibold">Login</Button>
-            </Link>
+            <button className="flex items-center justify-center px-6 py-2.5 font-semibold text-black">
+              Sign up
+            </button>
+            <button className="flex items-center justify-center rounded-md bg-[#6738EE] px-6 py-2.5 font-semibold text-white transition duration-200 hover:shadow-lg hover:drop-shadow">
+              Login
+            </button>
           </div>
           <button
             className={`focus:outline-none lg:hidden ${
@@ -131,4 +122,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default AppNavbar;

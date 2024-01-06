@@ -5,8 +5,9 @@ import {ThemeProvider} from "@/components/theme-provider";
 
 import "../globals.css";
 
+import type {Viewport} from "next";
+
 import {cn} from "@/lib/utils";
-import Navbar from "@/components/navbar";
 
 import {siteConfig} from "../../config/site";
 
@@ -14,6 +15,13 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
+
+export const viewport: Viewport = {
+  themeColor: [
+    {media: "(prefers-color-scheme: light)", color: "white"},
+    {media: "(prefers-color-scheme: dark)", color: "black"},
+  ],
+};
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -31,10 +39,6 @@ export const metadata: Metadata = {
     "Prisma",
     "Vercel",
     "PostgreSQL",
-  ],
-  themeColor: [
-    {media: "(prefers-color-scheme: light)", color: "white"},
-    {media: "(prefers-color-scheme: dark)", color: "black"},
   ],
   openGraph: {
     type: "website",
@@ -67,11 +71,9 @@ const RootLayout = ({children}: {children: React.ReactNode}) => (
     >
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
-        enableSystem
+        defaultTheme="light"
         disableTransitionOnChange
       >
-        <Navbar />
         {children}
       </ThemeProvider>
     </body>
