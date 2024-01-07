@@ -20,7 +20,7 @@ const RegisterForm = () => {
         className="flex items-center gap-4 border"
         onClick={() => {
           setClickedGoogle(true);
-          signIn("google");
+          signIn("google", {callbackUrl: "/app"});
         }}
       >
         {clickedGoogle ? (

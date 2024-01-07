@@ -43,7 +43,8 @@
       }
     ],
     "linebreak-style": ["error", "unix"],
-    "arrow-body-style": ["error", "as-needed"]
+    "arrow-body-style": ["error", "as-needed"],
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   "settings": {
     "tailwindcss": {
